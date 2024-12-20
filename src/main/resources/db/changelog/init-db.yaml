@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table
+      author: developer
+      changes:
+        - createTable:
+            tableName: sock
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+
+              - column:
+                  name: color
+                  type: varchar(30)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: cotton_percentage
+                  type: float
+                  constraints:
+                    nullable: false
+              - column:
+                  name: quantity
+                  type: integer
+                  constraints:
+                    nullable: false
+
+        - addAutoIncrement:
+            tableName: sock
+            columnName: id
