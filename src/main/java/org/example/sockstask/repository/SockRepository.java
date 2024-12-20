@@ -9,8 +9,4 @@ public interface SockRepository extends JpaRepository<Sock, Long>, SockRepo {
 
     Optional<Sock> findByColorAndCottonPercentage(String color, float cottonPercentage);
 
-    Optional<Sock> findByColor(String color);
-
-    Optional<Sock> findByCottonPercentage(float cottonPercentage);
-
 }

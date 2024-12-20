@@ -2,7 +2,6 @@ package org.example.sockstask.integration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.sockstask.dto.SockDto;
-import org.example.sockstask.repository.SockRepository;
 import org.example.sockstask.service.SockService;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,7 +20,6 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import java.util.stream.Stream;
 
-import static org.example.sockstask.TestData.SOCK;
 import static org.example.sockstask.TestData.SOCK_DTO;
 import static org.example.sockstask.util.Constant.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -49,7 +47,7 @@ public class SockControllerIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
 
-    private String URL = "http://localhost/api/socks";
+    private final String URL = "http://localhost/api/socks";
 
     @Autowired
     private SockService sockService;

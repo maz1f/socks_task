@@ -169,7 +169,7 @@ public class SockServiceTest {
         lenient().when(sockRepository.findByColorAndCottonPercentage(anyString(), anyFloat()))
                 .thenReturn(Optional.empty());
 
-        Exception e = assertThrows(InvalidCsvFileException.class,
+        assertThrows(InvalidCsvFileException.class,
                 () -> sockService.uploadFromFile(mockFile)
         );
 
